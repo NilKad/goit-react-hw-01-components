@@ -1,0 +1,80 @@
+.profile {
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  color: #9faab4;
+  border: 1px solid #9faab4;
+  border-radius: 4px;
+  overflow: hidden;
+  /* color: #424242;  color name */
+  /* color: #2a2a2a;  color font 1*/
+  /* #fafafa  color bg stats*/
+  /* #9faab4  color font 2 */
+  /* #fafafa bg body */
+}
+
+.description {
+  text-align: center;
+  padding: 32px;
+}
+
+.avatar {
+  width: 110px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+}
+
+.name {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2a2a2a;
+}
+
+.tag {
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.location {
+}
+
+.stats {
+  display: flex;
+  height: 82px;
+  align-items: center;
+  text-align: center;
+  background-color: #fafafa;
+  border-top: 1px solid #9faab4;
+
+  /* justify-content: center; */
+  /* padding: 20px; */
+  /* background-color: red; */
+}
+
+.list {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.list:not(:last-child) {
+  border-right: 1px solid #9faab4;
+}
+
+.label {
+  text-transform: capitalize;
+}
+
+.quantity {
+  color: #2a2a2a;
+  font-size: 16px;
+  font-weight: 700;
+}
