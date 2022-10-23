@@ -9,7 +9,8 @@
   overflow: hidden;
   /* color: #424242;  color name */
   /* color: #2a2a2a;  color font 1*/
-  /* #fafafa  color bg stats*/
+  /* #f3f6f9  color bg stats*/
+
   /* #9faab4  color font 2 */
   /* #fafafa bg body */
 }
@@ -47,7 +48,7 @@
   height: 82px;
   align-items: center;
   text-align: center;
-  background-color: #fafafa;
+  background-color: #f3f6f9;
   border-top: 1px solid #9faab4;
 }
 

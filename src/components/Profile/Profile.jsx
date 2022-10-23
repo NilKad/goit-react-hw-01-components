@@ -1,15 +1,31 @@
-import { Lists } from 'components/StatsLists/StatsLists';
-
+// import { Lists } from 'components/StatsLists/StatsLists';
 import PropTypes from 'prop-types';
 import styles from './Profile.module.css';
 
 export const Profile = ({ userName, tag, location, avatar, stats }) => {
-  // const objToArr = Object.entries(stats);
-  // console.log('objToArr: ', objToArr);
-  const spanClassName = [styles.label, styles.quantity];
+  // const spanClassName = [styles.label, styles.quantity];
   const listClassName = styles.list;
-  // console.log('listClassName: ', { listClassName });
-  // console.log('stats: ', { stats });
+
+  const spanRender = spanList => {
+    return (
+      <>
+        <span className={styles.label}>{spanList[0]}</span>
+        <span className={styles.quantity}>{spanList[1]}</span>
+      </>
+    );
+  };
+
+  const listRender = list => {
+    const arr = Object.entries(list);
+    const result = arr.map(el => {
+      return (
+        <li key={el[0]} className={listClassName}>
+          {spanRender(el)}
+        </li>
+      );
+    });
+    return result;
+  };
 
   return (
     <div className={styles.profile}>
@@ -19,14 +35,7 @@ export const Profile = ({ userName, tag, location, avatar, stats }) => {
         <p className={styles.tag}>@{tag}</p>
         <p className={styles.location}>{location}</p>
       </div>
-
-      <Lists
-        className={styles.stats}
-        lists={stats}
-        // countRows={objToArr.length}
-        listClassName={listClassName}
-        spanClassName={spanClassName}
-      />
+      <ul className={styles.stats}>{listRender(stats)}</ul>
     </div>
   );
 };
@@ -42,3 +51,22 @@ Profile.propTypes = {
     views: PropTypes.number.isRequired,
   }).isRequired,
 };
+
+//   return (
+//     <div className={styles.profile}>
+//       <div className={styles.description}>
+//         <img src={avatar} alt={userName} className={styles.avatar} />
+//         <p className={styles.name}>{userName}</p>
+//         <p className={styles.tag}>@{tag}</p>
+//         <p className={styles.location}>{location}</p>
+//       </div>
+
+//       <Lists
+//         className={styles.stats}
+//         lists={stats}
+//         listClassName={listClassName}
+//         spanClassName={spanClassName}
+//       />
+//     </div>
+//   );
+// };
