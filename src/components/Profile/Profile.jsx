@@ -5,7 +5,7 @@ import styles from './Profile.module.css';
 
 export const Profile = ({ userName, tag, location, avatar, stats }) => {
   const objToArr = Object.entries(stats);
-  console.log('objToArr: ', objToArr);
+  // console.log('objToArr: ', objToArr);
   const spanClassName = [styles.label, styles.quantity];
   const listClassName = styles.list;
 
