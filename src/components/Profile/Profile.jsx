@@ -1,13 +1,15 @@
-import { Lists } from 'components/Lists/Lists';
+import { Lists } from 'components/StatsLists/StatsLists';
 
 import PropTypes from 'prop-types';
 import styles from './Profile.module.css';
 
 export const Profile = ({ userName, tag, location, avatar, stats }) => {
-  const objToArr = Object.entries(stats);
+  // const objToArr = Object.entries(stats);
   // console.log('objToArr: ', objToArr);
   const spanClassName = [styles.label, styles.quantity];
   const listClassName = styles.list;
+  console.log('listClassName: ', { listClassName });
+  console.log('stats: ', { stats });
 
   return (
     <div className={styles.profile}>
@@ -20,7 +22,8 @@ export const Profile = ({ userName, tag, location, avatar, stats }) => {
 
       <Lists
         className={styles.stats}
-        lists={objToArr}
+        lists={stats}
+        // countRows={objToArr.length}
         listClassName={listClassName}
         spanClassName={spanClassName}
       />
@@ -29,9 +32,13 @@ export const Profile = ({ userName, tag, location, avatar, stats }) => {
 };
 
 Profile.propTypes = {
-  userName: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  avatar: PropTypes.string,
-  // stats: PropTypes.object(PropTypes.number),
+  userName: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+  }).isRequired,
 };

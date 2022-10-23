@@ -1,4 +1,4 @@
-import { ListsSpan } from './ListsSpan';
+import { ListsSpan } from './StatsListsSpan';
 
 export const ListsItem = ({ lists, classNameList, spanClassName }) => {
   const spanMap = lists.map((el, index) => {
