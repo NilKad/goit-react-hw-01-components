@@ -1,8 +1,6 @@
 import { ListsSpan } from './ListsSpan';
 
 export const ListsItem = ({ lists, classNameList, spanClassName }) => {
-  // console.log('ListsItem lists: ', lists);
-  // console.log('spanClassName: ', spanClassName);
   const spanMap = lists.map((el, index) => {
     return (
       <ListsSpan

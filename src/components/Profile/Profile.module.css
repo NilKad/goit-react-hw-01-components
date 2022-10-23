@@ -39,8 +39,8 @@
   margin-bottom: 12px;
 }
 
-.location {
-}
+/* .location {
+} */
 
 .stats {
   display: flex;
@@ -49,10 +49,6 @@
   text-align: center;
   background-color: #fafafa;
   border-top: 1px solid #9faab4;
-
-  /* justify-content: center; */
-  /* padding: 20px; */
-  /* background-color: red; */
 }
 
 .list {
@@ -67,6 +63,7 @@
 
 .list:not(:last-child) {
   border-right: 1px solid #9faab4;
+  flex-basis: auto;
 }
 
 .label {
