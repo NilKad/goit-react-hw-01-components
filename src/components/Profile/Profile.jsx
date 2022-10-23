@@ -8,8 +8,8 @@ export const Profile = ({ userName, tag, location, avatar, stats }) => {
   // console.log('objToArr: ', objToArr);
   const spanClassName = [styles.label, styles.quantity];
   const listClassName = styles.list;
-  console.log('listClassName: ', { listClassName });
-  console.log('stats: ', { stats });
+  // console.log('listClassName: ', { listClassName });
+  // console.log('stats: ', { stats });
 
   return (
     <div className={styles.profile}>
