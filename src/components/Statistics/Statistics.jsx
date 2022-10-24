@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 // import { Section } from '../Section/Section';
 import cssStat from './Statistics.module.css';
 
+// console.log(cssStat);
+// console.dir(cssStat);
 export const Statistics = ({ titleContent, stats }) => {
   // const spanClassName = [cssStat.label, cssStat.percentage];
   const listClassName = cssStat.item;
@@ -32,7 +34,7 @@ export const Statistics = ({ titleContent, stats }) => {
   return (
     <>
       <section className={cssStat.statistics}>
-        <h2 className={cssStat.title}>{titleContent}</h2>
+        {titleContent && <h2 className={cssStat.title}>{titleContent}</h2>}
         <ul className={cssStat['stat-list']}>{listRender(stats)}</ul>
       </section>
     </>
@@ -40,7 +42,7 @@ export const Statistics = ({ titleContent, stats }) => {
 };
 
 Statistics.propTypes = {
-  titleContent: PropTypes.string.isRequired,
+  titleContent: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
