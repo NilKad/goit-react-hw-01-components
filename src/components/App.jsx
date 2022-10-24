@@ -3,8 +3,8 @@ import user from './Profile/user.json';
 import statisticsData from './Statistics/data.json';
 // import statsData from './Statistics/';
 import { Statistics } from './Statistics/Statistics';
-console.log('user: ', user);
-console.log('statisticsData: ', statisticsData);
+// console.log('user: ', user);
+// console.log('statisticsData: ', statisticsData);
 
 export const App = () => {
   return (

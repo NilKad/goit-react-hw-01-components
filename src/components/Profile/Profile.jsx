@@ -5,7 +5,7 @@ import styles from './Profile.module.css';
 export const Profile = ({ userName, tag, location, avatar, stats }) => {
   // const spanClassName = [styles.label, styles.quantity];
   const listClassName = styles.list;
-
+  // console.log('stats: ', stats);
   const spanRender = spanList => {
     return (
       <>

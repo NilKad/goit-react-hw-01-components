@@ -1,24 +1,51 @@
-import { Section } from '../Section/Section';
-import { Lists } from '../StatsLists/StatsLists';
+import PropTypes from 'prop-types';
+// import { Section } from '../Section/Section';
 import cssStat from './Statistics.module.css';
 
 export const Statistics = ({ titleContent, stats }) => {
-  console.log('=====Statistics======');
-  console.log('titleContent: ', titleContent);
-  console.log('titleContent: ', titleContent);
-  const spanClassName = [cssStat.label, cssStat.percentage];
-  const listClassName = cssStat['stat-list'];
+  // const spanClassName = [cssStat.label, cssStat.percentage];
+  const listClassName = cssStat.item;
+
+  const spanRender = spanList => {
+    return (
+      <>
+        <span className={cssStat.label}>{spanList[0]}</span>
+        <span className={cssStat.percentage}>{spanList[1]}%</span>
+      </>
+    );
+  };
+
+  const listRender = list => {
+    const result = list.map(el => {
+      const key = el.id;
+      const name = el.label;
+      const value = el.percentage;
+      return (
+        <li key={key} className={listClassName}>
+          {spanRender([name, value])}
+        </li>
+      );
+    });
+    return result;
+  };
+
   return (
     <>
-      <Section className={cssStat.statistics}>
+      <section className={cssStat.statistics}>
         <h2 className={cssStat.title}>{titleContent}</h2>
-        {/* <Lists
-          className={listClassName}
-          lists={stats}
-          listClassName={cssStat.item}
-          spanClassName={spanClassName}
-        /> */}
-      </Section>
+        <ul className={cssStat['stat-list']}>{listRender(stats)}</ul>
+      </section>
     </>
   );
+};
+
+Statistics.propTypes = {
+  titleContent: PropTypes.string.isRequired,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };
