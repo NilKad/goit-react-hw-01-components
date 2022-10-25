@@ -1,4 +1,4 @@
-import { Section } from 'components/Section/Section';
+import PropTypes from 'prop-types';
 import css from './TransactionHistory.module.css';
 export const TransactionHistory = ({ data }) => {
   // console.log('data: ', data);
@@ -28,4 +28,15 @@ export const TransactionHistory = ({ data }) => {
       <tbody>{data.map(rowsRender)}</tbody>
     </table>
   );
+};
+
+TransactionHistory.prototypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      typeof: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };

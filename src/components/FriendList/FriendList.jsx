@@ -1,9 +1,6 @@
-// import Container from '../Container'
 import css from './friendList.module.css';
 
 export const FriendList = friends => {
-  console.log(css);
-  console.log('friends!: ', friends.friends);
   const cardFriend = ({ friends }) => {
     return friends.map(el => {
       const { avatar, name, isOnline, id } = el;

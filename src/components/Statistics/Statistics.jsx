@@ -1,11 +1,7 @@
 import PropTypes from 'prop-types';
-// import { Section } from '../Section/Section';
 import cssStat from './Statistics.module.css';
 
-// console.log(cssStat);
-// console.dir(cssStat);
 export const Statistics = ({ titleContent, stats }) => {
-  // const spanClassName = [cssStat.label, cssStat.percentage];
   const listClassName = cssStat.item;
 
   const spanRender = spanList => {
