@@ -49,22 +49,3 @@ Profile.propTypes = {
     views: PropTypes.number.isRequired,
   }).isRequired,
 };
-
-//   return (
-//     <div className={styles.profile}>
-//       <div className={styles.description}>
-//         <img src={avatar} alt={userName} className={styles.avatar} />
-//         <p className={styles.name}>{userName}</p>
-//         <p className={styles.tag}>@{tag}</p>
-//         <p className={styles.location}>{location}</p>
-//       </div>
-
-//       <Lists
-//         className={styles.stats}
-//         lists={stats}
-//         listClassName={listClassName}
-//         spanClassName={spanClassName}
-//       />
-//     </div>
-//   );
-// };
